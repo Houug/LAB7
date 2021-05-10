@@ -12,15 +12,15 @@ using namespace std;
 void printHeader()
 {
 	cout << "\n========================================================================\n"
-		 << setw(40) << "Ф.И.О Врача" << setw(16) << "Cпециальность" << setw(16) << "Квалификация"
-		 << "\n========================================================================\n";
+		<< setw(40) << "Ф.И.О Врача" << setw(16) << "Cпециальность" << setw(16) << "Квалификация"
+		<< "\n========================================================================\n";
 }
 void printMenu()
 {
 	cout << "\n\n***************Меню**************\n"
-		 << "1 - Добавить врача в базу\n2 - Поиск врача по Ф.И.О\n3 - Поиск врачей по специальности и квалификации\n"
-		 << "4 - Сортировка базы по алфавиту\n5 - Вывод базы с врачами\n6 - Удалить врача из начала базы\n7 - Выход из программы"
-		 << "\n*********************************\n";
+		<< "1 - Добавить врача в базу\n2 - Поиск врача по Ф.И.О\n3 - Поиск врачей по специальности и квалификации\n"
+		<< "4 - Сортировка базы по алфавиту\n5 - Вывод базы с врачами\n6 - Удалить врача из начала базы\n7 - Выход из программы"
+		<< "\n*********************************\n";
 }
 Clinic findDoctor(deque<Clinic> m)
 {
@@ -41,7 +41,7 @@ Clinic findDoctor(deque<Clinic> m)
 			break;
 		}
 	}
-	if (count == 0) cout <<  "Поиск не выдал результов\n";
+	if (count == 0) cout << "Поиск не выдал результов\n";
 	else
 	{
 		printHeader();
@@ -73,7 +73,7 @@ void addDoctor(deque<Clinic>& m)
 
 	cin >> temp;
 
-	
+
 
 Point:
 	try {
@@ -102,7 +102,7 @@ Point:
 	else {
 		m.push_front(temp);
 	}
-	
+
 }
 void printAll(deque<Clinic> m)
 {
@@ -128,17 +128,47 @@ void filterDoctor(deque<Clinic> oldArr, deque<Clinic>& newArr)
 {
 	int spec = 0, qual = 0;
 
-	do
-	{
+PointSpec:
+	try {
 		cout << "Введите специальность (1-3): ";
 		cin >> spec;
-	} while (checkInput(spec, 0));
+		getchar();
 
-	do
-	{
+		if (!cin) throw 0; // If var spec not int
+		if (!(spec == 1 || spec == 2 || spec == 3)) throw  1; // If var spec not equal 1,2 or 3
+	}
+	catch (int err) {
+		if (err == 0) {
+			cerr << endl << "Поддерживаются только цифры! Повторите ввод..." << endl;
+			cin.clear();
+			cin.ignore(4096, '\n');
+		}
+		if (err == 1) {
+			cerr << endl << "Только 1,2 или 3!" << endl;
+		}
+		goto PointSpec;
+	}
+
+PointQual:
+	try {
 		cout << "Введите квалификация (0-2): ";
 		cin >> qual;
-	} while (checkInput(qual, 1));
+		getchar();
+
+		if (!cin) throw 0; // If var qual not int
+		if (!(qual == 0 || qual == 1 || qual == 2)) throw  1; // If var qual not equal 0,1 or 2
+	}
+	catch (int err) {
+		if (err == 0) {
+			cerr << endl << "Поддерживаются только цифры! Повторите ввод..." << endl;
+			cin.clear();
+			cin.ignore(4096, '\n');
+		}
+		if (err == 1) {
+			cerr << endl << "Только 0,1 или 2!" << endl;
+		}
+		goto PointQual;
+	}
 
 	for (int i = 0; i < oldArr.size(); i++)
 	{
