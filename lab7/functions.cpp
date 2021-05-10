@@ -9,39 +9,6 @@
 #include <algorithm>
 using namespace std;
 
-int checkInput(int n, int mode)
-{
-	if (checkInput()) {
-		if (mode == 0)
-		{
-			switch (n)
-			{
-			case 1:
-				return 0;
-			case 2:
-				return 0;
-			case 3:
-				return 0;
-			default:
-				return 1;
-			}
-		}
-		if (mode == 1)
-		{
-			switch (n)
-			{
-			case 0:
-				return 0;
-			case 1:
-				return 0;
-			case 2:
-				return 0;
-			default:
-				return 1;
-			}
-		}
-	}
-}
 void printHeader()
 {
 	cout << "\n========================================================================\n"
@@ -54,17 +21,6 @@ void printMenu()
 		 << "1 - Добавить врача в базу\n2 - Поиск врача по Ф.И.О\n3 - Поиск врачей по специальности и квалификации\n"
 		 << "4 - Сортировка базы по алфавиту\n5 - Вывод базы с врачами\n6 - Удалить врача из начала базы\n7 - Выход из программы"
 		 << "\n*********************************\n";
-}
-bool checkInput()
-{
-	if (!cin)
-	{
-		cerr << endl << "Ошибка ввода!" << endl;
-		cin.clear();
-		cin.ignore(4096, '\n');
-		return true;
-	}
-	return false;
 }
 Clinic findDoctor(deque<Clinic> m)
 {
