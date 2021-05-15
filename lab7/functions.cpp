@@ -49,23 +49,7 @@ Clinic findDoctor(deque<Clinic> m)
 		return foundDoctor;
 	}
 }
-void sortData(deque<Clinic>& m)
-{
-	for (int i = 0, min; i < m.size(); i++)
-	{
-		min = i;
 
-		for (int j = i + 1; j < m.size(); j++)
-		{
-			if (m[min] > m[j])
-			{
-				min = j;
-			}
-		}
-
-		swap(m[i], m[min]);
-	}
-}
 void addDoctor(deque<Clinic>& m)
 {
 	int choose;
@@ -123,6 +107,10 @@ void removeFirstDoctor(deque<Clinic>& m)
 {
 	if (m.size()) m.pop_front();
 	else cerr << "База данных пустая!" << endl;
+}
+bool compareByFIO(Clinic& obj1, Clinic& obj2)
+{
+	return obj1 < obj2;
 }
 void filterDoctor(deque<Clinic> oldArr, deque<Clinic>& newArr)
 {

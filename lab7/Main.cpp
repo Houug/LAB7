@@ -9,6 +9,7 @@
 #include "Data.h"
 
 #include <deque>
+#include <algorithm>
 
 #define path "data.txt"
 using namespace std;
@@ -89,7 +90,7 @@ int main()
 			}
 			break;
 		case 4:
-			sortData(arr);
+			sort(arr.begin(), arr.end(), compareByFIO);
 			break;
 		case 5:
 			printAll(arr);
