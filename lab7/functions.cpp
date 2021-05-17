@@ -12,14 +12,14 @@ using namespace std;
 void printHeader()
 {
 	cout << "\n========================================================================\n"
-		<< setw(40) << "Ô.È.Î Âðà÷à" << setw(16) << "Cïåöèàëüíîñòü" << setw(16) << "Êâàëèôèêàöèÿ"
+		<< setw(40) << "Ð¤.Ð˜.Ðž Ð’Ñ€Ð°Ñ‡Ð°" << setw(16) << "CÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ" << setw(16) << "ÐšÐ²Ð°Ð»Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ"
 		<< "\n========================================================================\n";
 }
 void printMenu()
 {
-	cout << "\n\n***************Ìåíþ**************\n"
-		<< "1 - Äîáàâèòü âðà÷à â áàçó\n2 - Ïîèñê âðà÷à ïî Ô.È.Î\n3 - Ïîèñê âðà÷åé ïî ñïåöèàëüíîñòè è êâàëèôèêàöèè\n"
-		<< "4 - Ñîðòèðîâêà áàçû ïî àëôàâèòó\n5 - Âûâîä áàçû ñ âðà÷àìè\n6 - Óäàëèòü âðà÷à èç íà÷àëà áàçû\n7 - Âûõîä èç ïðîãðàììû"
+	cout << "\n\n***************ÐœÐµÐ½ÑŽ**************\n"
+		<< "1 - Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð²Ñ€Ð°Ñ‡Ð° Ð² Ð±Ð°Ð·Ñƒ\n2 - ÐŸÐ¾Ð¸ÑÐº Ð²Ñ€Ð°Ñ‡Ð° Ð¿Ð¾ Ð¤.Ð˜.Ðž\n3 - ÐŸÐ¾Ð¸ÑÐº Ð²Ñ€Ð°Ñ‡ÐµÐ¹ Ð¿Ð¾ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸ Ð¸ ÐºÐ²Ð°Ð»Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¸\n"
+		<< "4 - Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð±Ð°Ð·Ñ‹ Ð¿Ð¾ Ð°Ð»Ñ„Ð°Ð²Ð¸Ñ‚Ñƒ\n5 - Ð’Ñ‹Ð²Ð¾Ð´ Ð±Ð°Ð·Ñ‹ Ñ Ð²Ñ€Ð°Ñ‡Ð°Ð¼Ð¸\n6 - Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð²Ñ€Ð°Ñ‡Ð° Ð¸Ð· Ð½Ð°Ñ‡Ð°Ð»Ð° Ð±Ð°Ð·Ñ‹\n7 - Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹"
 		<< "\n*********************************\n";
 }
 Clinic findDoctor(deque<Clinic> m)
@@ -27,7 +27,7 @@ Clinic findDoctor(deque<Clinic> m)
 	Fio temp;
 	int count = 0;
 
-	cout << "Ïîèñê âðà÷à ïî Ô.È.Î\n";
+	cout << "ÐŸÐ¾Ð¸ÑÐº Ð²Ñ€Ð°Ñ‡Ð° Ð¿Ð¾ Ð¤.Ð˜.Ðž\n";
 	cin >> temp;
 
 	Clinic foundDoctor(temp.getSurname(), temp.getName(), temp.getFather(), -1, -1);
@@ -41,7 +41,7 @@ Clinic findDoctor(deque<Clinic> m)
 			break;
 		}
 	}
-	if (count == 0) cout << "Ïîèñê íå âûäàë ðåçóëüòîâ\n";
+	if (count == 0) cout << "ÐŸÐ¾Ð¸ÑÐº Ð½Ðµ Ð²Ñ‹Ð´Ð°Ð» Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð¾Ð²\n";
 	else
 	{
 		printHeader();
@@ -61,7 +61,7 @@ void addDoctor(deque<Clinic>& m)
 
 Point:
 	try {
-		cout << "Êóäà äîáàâèòü? 0 - Íà÷àëî, 1 - Êîíåö" << endl;
+		cout << "ÐšÑƒÐ´Ð° Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ? 0 - ÐÐ°Ñ‡Ð°Ð»Ð¾, 1 - ÐšÐ¾Ð½ÐµÑ†" << endl;
 		cin >> choose;
 		getchar();
 
@@ -70,12 +70,12 @@ Point:
 	}
 	catch (int err) {
 		if (err == 0) {
-			cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû! Ïîâòîðèòå ââîä..." << endl;
+			cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´..." << endl;
 			cin.clear();
 			cin.ignore(4096, '\n');
 		}
 		if (err == 1) {
-			cerr << endl << "Òîëüêî 0 èëè 1!" << endl;
+			cerr << endl << "Ð¢Ð¾Ð»ÑŒÐºÐ¾ 0 Ð¸Ð»Ð¸ 1!" << endl;
 		}
 		goto Point;
 	}
@@ -100,13 +100,13 @@ void printAll(deque<Clinic> m)
 	}
 	else
 	{
-		cerr << "Áàçà äàííûõ ïóñòàÿ!" << endl;
+		cerr << "Ð‘Ð°Ð·Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¿ÑƒÑÑ‚Ð°Ñ!" << endl;
 	}
 }
 void removeFirstDoctor(deque<Clinic>& m)
 {
 	if (m.size()) m.pop_front();
-	else cerr << "Áàçà äàííûõ ïóñòàÿ!" << endl;
+	else cerr << "Ð‘Ð°Ð·Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¿ÑƒÑÑ‚Ð°Ñ!" << endl;
 }
 bool compareByFIO(Clinic& obj1, Clinic& obj2)
 {
@@ -118,7 +118,7 @@ void filterDoctor(deque<Clinic> oldArr, deque<Clinic>& newArr)
 
 PointSpec:
 	try {
-		cout << "Ââåäèòå ñïåöèàëüíîñòü (1-3): ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ (1-3): ";
 		cin >> spec;
 		getchar();
 
@@ -127,19 +127,19 @@ PointSpec:
 	}
 	catch (int err) {
 		if (err == 0) {
-			cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû! Ïîâòîðèòå ââîä..." << endl;
+			cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´..." << endl;
 			cin.clear();
 			cin.ignore(4096, '\n');
 		}
 		if (err == 1) {
-			cerr << endl << "Òîëüêî 1,2 èëè 3!" << endl;
+			cerr << endl << "Ð¢Ð¾Ð»ÑŒÐºÐ¾ 1,2 Ð¸Ð»Ð¸ 3!" << endl;
 		}
 		goto PointSpec;
 	}
 
 PointQual:
 	try {
-		cout << "Ââåäèòå êâàëèôèêàöèÿ (0-2): ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ²Ð°Ð»Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ (0-2): ";
 		cin >> qual;
 		getchar();
 
@@ -148,12 +148,12 @@ PointQual:
 	}
 	catch (int err) {
 		if (err == 0) {
-			cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû! Ïîâòîðèòå ââîä..." << endl;
+			cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´..." << endl;
 			cin.clear();
 			cin.ignore(4096, '\n');
 		}
 		if (err == 1) {
-			cerr << endl << "Òîëüêî 0,1 èëè 2!" << endl;
+			cerr << endl << "Ð¢Ð¾Ð»ÑŒÐºÐ¾ 0,1 Ð¸Ð»Ð¸ 2!" << endl;
 		}
 		goto PointQual;
 	}
@@ -167,7 +167,7 @@ PointQual:
 	}
 	if (newArr.size() == 0)
 	{
-		cout << "Ïîèñê íå âûäàë ðåçóëüòîâ\n";
+		cout << "ÐŸÐ¾Ð¸ÑÐº Ð½Ðµ Ð²Ñ‹Ð´Ð°Ð» Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð¾Ð²\n";
 	}
 }
 
@@ -180,7 +180,7 @@ istream& operator>>(istream& in, Clinic& obj)
 
 	do {
 		try {
-			cout << "Ââåäèòå ñïåöèàëüíîñòü (1-3): ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ (1-3): ";
 			cin >> spec;
 
 			if (!cin) throw 0; // If spec not int
@@ -190,12 +190,12 @@ istream& operator>>(istream& in, Clinic& obj)
 		}
 		catch (int err) {
 			if (err == 0) {
-				cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû! Ïîâòîðèòå ââîä..." << endl;
+				cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´..." << endl;
 				cin.clear();
 				cin.ignore(4096, '\n');
 			}
 			else if (err == 1) {
-				cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû 1,2 èëè 3." << endl;
+				cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹ 1,2 Ð¸Ð»Ð¸ 3." << endl;
 			}
 
 			check = true;
@@ -205,7 +205,7 @@ istream& operator>>(istream& in, Clinic& obj)
 
 	do {
 		try {
-			cout << "Ââåäèòå êâàëèôèêàöèÿ (0-2): ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ²Ð°Ð»Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ (0-2): ";
 			cin >> qual;
 
 			if (!cin) throw 0; // If qual not int
@@ -215,12 +215,12 @@ istream& operator>>(istream& in, Clinic& obj)
 		}
 		catch (int err) {
 			if (err == 0) {
-				cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû! Ïîâòîðèòå ââîä..." << endl;
+				cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´..." << endl;
 				cin.clear();
 				cin.ignore(4096, '\n');
 			}
 			else if (err == 1) {
-				cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû 0,1 èëè 2." << endl;
+				cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹ 0,1 Ð¸Ð»Ð¸ 2." << endl;
 			}
 
 			check = true;
@@ -237,7 +237,7 @@ istream& operator>>(istream& in, Fio& obj)
 
 	do {
 		try {
-			cout << "Ââåäèòå ôàìèëèþ: ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ: ";
 			in.getline(buf, 20);
 
 			for (int i = 0; i < strlen(buf); i++) {
@@ -246,7 +246,7 @@ istream& operator>>(istream& in, Fio& obj)
 			check = false;
 		}
 		catch (...) {
-			cerr << endl << "Ôàìèëèÿ äîëæíà ñîäåðæàòü òîëüêî áóêâû!" << endl;
+			cerr << endl << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð° ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð±ÑƒÐºÐ²Ñ‹!" << endl;
 			check = true;
 		}
 	} while (check);
@@ -254,7 +254,7 @@ istream& operator>>(istream& in, Fio& obj)
 
 	do {
 		try {
-			cout << "Ââåäèòå èìÿ: ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ: ";
 			in.getline(buf, 20);
 
 			for (int i = 0; i < strlen(buf); i++) {
@@ -263,7 +263,7 @@ istream& operator>>(istream& in, Fio& obj)
 			check = false;
 		}
 		catch (...) {
-			cerr << endl << "Èìÿ äîëæíî ñîäåðæàòü òîëüêî áóêâû!" << endl;
+			cerr << endl << "Ð˜Ð¼Ñ Ð´Ð¾Ð»Ð¶Ð½Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð±ÑƒÐºÐ²Ñ‹!" << endl;
 			check = true;
 		}
 	} while (check);
@@ -271,7 +271,7 @@ istream& operator>>(istream& in, Fio& obj)
 
 	do {
 		try {
-			cout << "Ââåäèòå îò÷åñòâî: ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ñ‚Ñ‡ÐµÑÑ‚Ð²Ð¾: ";
 			in.getline(buf, 20);
 
 			for (int i = 0; i < strlen(buf); i++) {
@@ -280,7 +280,7 @@ istream& operator>>(istream& in, Fio& obj)
 			check = false;
 		}
 		catch (...) {
-			cerr << endl << "Èìÿ äîëæíî ñîäåðæàòü òîëüêî áóêâû!" << endl;
+			cerr << endl << "Ð˜Ð¼Ñ Ð´Ð¾Ð»Ð¶Ð½Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð±ÑƒÐºÐ²Ñ‹!" << endl;
 			check = true;
 		}
 	} while (check);
@@ -305,13 +305,13 @@ ostream& operator<<(ostream& out, Clinic& obj)
 	switch (obj.getSpecialtyId())
 	{
 	case 1:
-		strcpy(specialty, "Òåðàïåâò");
+		strcpy(specialty, "Ð¢ÐµÑ€Ð°Ð¿ÐµÐ²Ñ‚");
 		break;
 	case 2:
-		strcpy(specialty, "Êàðäèîëîã");
+		strcpy(specialty, "ÐšÐ°Ñ€Ð´Ð¸Ð¾Ð»Ð¾Ð³");
 		break;
 	case 3:
-		strcpy(specialty, "Ñòîìàòîëîã");
+		strcpy(specialty, "Ð¡Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¾Ð»Ð¾Ð³");
 		break;
 	default:
 		strcpy(specialty, "NAN");
@@ -320,13 +320,13 @@ ostream& operator<<(ostream& out, Clinic& obj)
 	switch (obj.getQualificationId())
 	{
 	case 0:
-		strcpy(qualification, "Âûñøàÿ");
+		strcpy(qualification, "Ð’Ñ‹ÑÑˆÐ°Ñ");
 		break;
 	case 1:
-		strcpy(qualification, "Ïåðâàÿ");
+		strcpy(qualification, "ÐŸÐµÑ€Ð²Ð°Ñ");
 		break;
 	case 2:
-		strcpy(qualification, "Âòîðàÿ");
+		strcpy(qualification, "Ð’Ñ‚Ð¾Ñ€Ð°Ñ");
 		break;
 	default:
 		strcpy(qualification, "NAN");
