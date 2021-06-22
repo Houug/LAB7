@@ -18,7 +18,7 @@ void loadData(deque<Clinic>& m, fstream& data)
 
 		data >> bufSurname >> bufName >> bufFather >> spec >> qual;
 		if (data.fail()) {
-			cerr << "Îøèáêà ÷òåíèÿ ôàéëà! Âîçìîæíî áàçà íå çàãðóçèëàñü." << endl;
+			cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ñ‡Ñ‚ÐµÐ½Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°! Ð’Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð±Ð°Ð·Ð° Ð½Ðµ Ð·Ð°Ð³Ñ€ÑƒÐ·Ð¸Ð»Ð°ÑÑŒ." << endl;
 			return;
 		}
 			
@@ -26,21 +26,21 @@ void loadData(deque<Clinic>& m, fstream& data)
 
 		m.push_back(temp);
 	}
-	cout << "Ôàéë óñïåøíî îòêðûò!\n";
+	cout << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚!\n";
 }
 void createData(deque<Clinic>& m)
 {
 	int n;
 	point:
 	try {
-		cout << "Ââåäèòå êîë-âî ïîçèöèé â áàçå: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¹ Ð² Ð±Ð°Ð·Ðµ: ";
 		cin >> n;
 
 		if (!cin) throw 0; // If n not int
 	}
 	catch (int err) {
 		if (err == 0) {
-			cerr << endl << "Ïîääåðæèâàþòñÿ òîëüêî öèôðû! Ïîâòîðèòå ââîä..." << endl;
+			cerr << endl << "ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ†Ð¸Ñ„Ñ€Ñ‹! ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´..." << endl;
 			cin.clear();
 			cin.ignore(4096, '\n');
 		}
@@ -50,7 +50,7 @@ void createData(deque<Clinic>& m)
 
 	for (int i = 0; i < n; i++)
 	{
-		cout << "\nÂâîä ýëåìåíòà áàçû íîìåð:\n" << i + 1;
+		cout << "\nÐ’Ð²Ð¾Ð´ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð±Ð°Ð·Ñ‹ Ð½Ð¾Ð¼ÐµÑ€:\n" << i + 1;
 		addDoctor(m);
 	}
 }
